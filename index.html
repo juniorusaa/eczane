@@ -125,5 +125,15 @@ footer{background:var(--text);padding:3rem 5%;text-align:center;color:rgba(255,2
   <p style="margin-top:0.8rem;">info@vitapluseczane.com.tr | +90 212 555 0400</p>
   <p style="margin-top:1rem;font-size:0.8rem;">© 2025 VitaPlus Eczane. Tüm hakları saklıdır.</p>
 </footer>
-</body>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}});});
+// Animate strip icons on scroll
+window.addEventListener('scroll',()=>{
+  document.querySelectorAll('.strip-item').forEach((el,i)=>{
+    const rect=el.getBoundingClientRect();
+    if(rect.top<window.innerHeight){el.style.opacity='1';el.style.transform='translateY(0)';}
+  });
+});
+</script></body>
 </html>
