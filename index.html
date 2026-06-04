@@ -1,139 +1,2452 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VitaPlus Eczane</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Hayat Eczanesi — Sağlığınız bizim önceliğimiz. Reçeteli ilaç, cilt bakım, vitamin, bebek ürünleri, evde sağlık ve aşı hizmetleri. 7/24 nöbetçi eczane." />
+<meta name="theme-color" content="#059669" />
+<title>Hayat Eczanesi — Sağlığınız Bizim Önceliğimiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{--bg:#f0fdf4;--card:#ffffff;--accent:#16a34a;--accent2:#15803d;--text:#1a2e1a;--muted:#6b7280;--light:#dcfce7;}
-body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--text);}
-nav{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;z-index:100;border-bottom:2px solid var(--light);box-shadow:0 2px 20px rgba(22,163,74,0.08);}
-.logo{font-size:1.5rem;font-weight:800;color:var(--accent);}
-.logo span{color:var(--text);}
-.nav-links a{color:var(--text);text-decoration:none;margin-left:2rem;font-size:0.9rem;}
-.nav-links a:hover{color:var(--accent);}
-.btn-green{background:var(--accent);color:white;padding:0.7rem 1.8rem;border:none;border-radius:0.5rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.3s;}
-.btn-green:hover{background:var(--accent2);}
-.hero{min-height:90vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:8rem 5% 4rem;gap:4rem;background:linear-gradient(135deg,#f0fdf4,#dcfce7);}
-.hero-badge{display:inline-block;background:var(--light);border:1px solid rgba(22,163,74,0.3);color:var(--accent);padding:0.4rem 1rem;border-radius:2rem;font-size:0.85rem;margin-bottom:1.5rem;font-weight:600;}
-.hero h1{font-size:3rem;font-weight:800;line-height:1.2;margin-bottom:1.5rem;color:var(--text);}
-.hero h1 span{color:var(--accent);}
-.hero p{color:var(--muted);font-size:1.05rem;line-height:1.8;margin-bottom:2rem;}
-.hero-img{width:100%;height:480px;object-fit:cover;border-radius:1.5rem;box-shadow:0 20px 60px rgba(22,163,74,0.15);}
-.services-strip{padding:3rem 5%;background:var(--accent);display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center;}
-.strip-item{color:white;}
-.strip-icon{font-size:2rem;margin-bottom:0.5rem;}
-.strip-title{font-weight:700;font-size:0.95rem;}
-.strip-desc{font-size:0.8rem;opacity:0.8;margin-top:0.3rem;}
-.section{padding:5rem 5%;}
-.section-tag{color:var(--accent);font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;margin-bottom:0.8rem;}
-.section-title{font-size:2.2rem;font-weight:800;margin-bottom:1rem;color:var(--text);}
-.section-sub{color:var(--muted);line-height:1.7;max-width:500px;}
-.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem;}
-.product-card{background:var(--card);border-radius:1rem;overflow:hidden;border:1px solid #e5f3e8;transition:all 0.3s;box-shadow:0 2px 15px rgba(0,0,0,0.05);}
-.product-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(22,163,74,0.12);}
-.product-img{width:100%;height:180px;object-fit:cover;}
-.product-body{padding:1.2rem;}
-.product-cat{color:var(--accent);font-size:0.75rem;font-weight:600;text-transform:uppercase;margin-bottom:0.3rem;}
-.product-name{font-weight:700;font-size:0.95rem;margin-bottom:0.5rem;color:var(--text);}
-.product-price{color:var(--accent);font-weight:800;font-size:1.1rem;}
-.add-btn{width:100%;background:var(--light);color:var(--accent);border:none;padding:0.6rem;border-radius:0.4rem;font-weight:600;cursor:pointer;margin-top:0.8rem;font-size:0.85rem;transition:all 0.3s;}
-.add-btn:hover{background:var(--accent);color:white;}
-.about-section{padding:5rem 5%;background:var(--card);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
-.about-img{width:100%;height:450px;object-fit:cover;border-radius:1rem;box-shadow:0 20px 40px rgba(22,163,74,0.1);}
-.feature-list{list-style:none;margin-top:1.5rem;}
-.feature-list li{padding:0.7rem 0;color:var(--muted);border-bottom:1px solid #e5f3e8;display:flex;align-items:center;gap:0.8rem;font-size:0.95rem;}
-.feature-list li::before{content:'';width:10px;height:10px;background:var(--accent);border-radius:50%;flex-shrink:0;}
-.hours{padding:4rem 5%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;text-align:center;}
-.hours h2{font-size:2rem;font-weight:800;margin-bottom:2rem;}
-.hours-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:700px;margin:0 auto;}
-.hour-item{background:rgba(255,255,255,0.15);border-radius:0.8rem;padding:1.5rem;}
-.hour-day{font-weight:700;margin-bottom:0.5rem;}
-.hour-time{font-size:1.1rem;font-weight:800;}
-footer{background:var(--text);padding:3rem 5%;text-align:center;color:rgba(255,255,255,0.6);}
-.footer-logo{font-size:1.6rem;font-weight:800;color:var(--light);margin-bottom:0.8rem;}
-@media(max-width:768px){.hero{grid-template-columns:1fr;}.services-strip,.products-grid,.about-section,.hours-grid{grid-template-columns:1fr;}.nav-links{display:none;}}
+/* =========================================================
+   HAYAT ECZANESI — TEK DOSYA, SIFIR EMOJI
+   Renkler: #ffffff, #ecfdf5, #059669, #064e3b, #ea580c, #0f172a
+   ========================================================= */
+
+:root{
+  --bg: #ffffff;
+  --bg-soft: #ecfdf5;
+  --bg-mint: #f0fdf4;
+  --primary: #059669;
+  --primary-dark: #047857;
+  --deep: #064e3b;
+  --accent: #ea580c;
+  --accent-soft: #fff7ed;
+  --ink: #0f172a;
+  --ink-soft: #334155;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --white: #ffffff;
+  --shadow-sm: 0 1px 2px rgba(15,23,42,0.06);
+  --shadow:    0 6px 18px rgba(6,78,59,0.08);
+  --shadow-lg: 0 20px 50px rgba(6,78,59,0.14);
+  --radius: 14px;
+  --radius-sm: 8px;
+  --radius-lg: 22px;
+  --container: 1200px;
+}
+
+*,
+*::before,
+*::after{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  font-family: 'Nunito', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img{ max-width: 100%; display: block; }
+
+a{
+  color: var(--primary);
+  text-decoration: none;
+  transition: color .25s ease;
+}
+a:hover{ color: var(--deep); }
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  color: var(--deep);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0 0 .5em 0;
+}
+h1{ font-size: clamp(2.1rem, 4.4vw, 3.5rem); }
+h2{ font-size: clamp(1.7rem, 3.2vw, 2.4rem); }
+h3{ font-size: 1.25rem; }
+h4{ font-size: 1.05rem; }
+
+p{ margin: 0 0 1rem 0; color: var(--ink-soft); }
+
+.container{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section{ padding: 90px 0; position: relative; }
+
+.section-head{
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+.section-eyebrow{
+  display: inline-block;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: var(--bg-soft);
+  padding: 7px 16px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(5,150,105,0.18);
+}
+.section-title{
+  margin: 0 0 14px 0;
+}
+.section-sub{
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+/* ===================== BUTONLAR ===================== */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 26px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: .98rem;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all .3s ease;
+  white-space: nowrap;
+  letter-spacing: .01em;
+}
+.btn-primary{
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(5,150,105,0.32);
+}
+.btn-primary:hover{
+  background: var(--deep);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(6,78,59,0.35);
+}
+.btn-accent{
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(234,88,12,0.30);
+}
+.btn-accent:hover{
+  background: #c2410c;
+  color: #fff;
+  transform: translateY(-2px);
+}
+.btn-ghost{
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border-color: rgba(255,255,255,0.55);
+  backdrop-filter: blur(6px);
+}
+.btn-ghost:hover{
+  background: #fff;
+  color: var(--deep);
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+.btn-outline{
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.btn-outline:hover{
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ===================== NAVBAR ===================== */
+.navbar{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: saturate(140%) blur(12px);
+  -webkit-backdrop-filter: saturate(140%) blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: all .35s ease;
+}
+.navbar.scrolled{
+  background: rgba(255,255,255,0.98);
+  border-bottom-color: var(--line);
+  box-shadow: var(--shadow-sm);
+}
+.nav-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 78px;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: var(--deep);
+  letter-spacing: .02em;
+}
+.brand-mark{
+  width: 42px; height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--deep) 100%);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.15rem;
+  box-shadow: 0 6px 14px rgba(5,150,105,0.30);
+  position: relative;
+  overflow: hidden;
+}
+.brand-mark::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.45), transparent 60%);
+}
+.brand-text small{
+  display: block;
+  font-size: .7rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.nav-links{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav-links a{
+  display: inline-block;
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: .96rem;
+  color: var(--ink);
+  border-radius: 8px;
+  position: relative;
+  transition: color .25s ease, background .25s ease;
+}
+.nav-links a::after{
+  content: "";
+  position: absolute;
+  left: 16px; right: 16px; bottom: 4px;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s ease;
+}
+.nav-links a:hover{ color: var(--primary); }
+.nav-links a:hover::after{ transform: scaleX(1); }
+.nav-cta{
+  background: var(--primary);
+  color: #fff !important;
+  padding: 10px 18px !important;
+  border-radius: 999px !important;
+  margin-left: 8px;
+  box-shadow: 0 4px 10px rgba(5,150,105,0.25);
+}
+.nav-cta::after{ display: none !important; }
+.nav-cta:hover{
+  background: var(--deep) !important;
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+.nav-toggle{
+  display: none;
+  background: transparent;
+  border: 0;
+  width: 44px; height: 44px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.nav-toggle span{
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--deep);
+  margin: 5px auto;
+  transition: transform .3s ease, opacity .3s ease;
+}
+.nav-toggle.is-open span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+.nav-toggle.is-open span:nth-child(2){ opacity: 0; }
+.nav-toggle.is-open span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+
+/* ===================== HERO ===================== */
+.hero{
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+  padding: 120px 0 80px;
+}
+.hero-bg{
+  position: absolute; inset: 0;
+  background-image: url("https://images.unsplash.com/photo-1576602976047-174e57a47881?w=1920&q=85");
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+  transform: scale(1.04);
+  animation: heroZoom 18s ease-in-out infinite alternate;
+}
+@keyframes heroZoom{
+  from{ transform: scale(1.04); }
+  to  { transform: scale(1.12); }
+}
+.hero-overlay{
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(115deg, rgba(6,78,59,0.85) 0%, rgba(5,150,105,0.55) 50%, rgba(236,253,245,0.35) 100%),
+    linear-gradient(0deg, rgba(6,78,59,0.55), rgba(6,78,59,0.20));
+  z-index: -1;
+}
+.hero-inner{
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+}
+.hero-eyebrow{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.35);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  margin-bottom: 22px;
+  backdrop-filter: blur(8px);
+}
+.hero-eyebrow .dot{
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 0 0 rgba(52,211,153,0.7);
+  animation: pulse 1.8s infinite;
+}
+@keyframes pulse{
+  0%{ box-shadow: 0 0 0 0 rgba(52,211,153,0.7); }
+  70%{ box-shadow: 0 0 0 10px rgba(52,211,153,0); }
+  100%{ box-shadow: 0 0 0 0 rgba(52,211,153,0); }
+}
+.hero h1{
+  color: #fff;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  margin-bottom: 22px;
+  font-weight: 900;
+  text-shadow: 0 2px 30px rgba(0,0,0,0.25);
+}
+.hero h1 .accent{
+  color: #fde68a;
+  position: relative;
+  display: inline-block;
+}
+.hero h1 .accent::after{
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 4px;
+  height: 10px;
+  background: rgba(253,230,138,0.35);
+  z-index: -1;
+  border-radius: 4px;
+}
+.hero-lead{
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.92);
+  max-width: 540px;
+  margin-bottom: 36px;
+  line-height: 1.7;
+}
+.hero-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 42px;
+}
+.hero-stats{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 540px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.25);
+}
+.hero-stat strong{
+  display: block;
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -.02em;
+}
+.hero-stat span{
+  display: block;
+  font-size: .85rem;
+  color: rgba(255,255,255,0.8);
+  font-weight: 500;
+}
+
+/* Hero Side — Nobetci Widget */
+.hero-side{
+  position: relative;
+}
+.nobet-card{
+  background: rgba(255,255,255,0.97);
+  color: var(--ink);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+.nobet-card::before{
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+.nobet-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.nobet-head h3{
+  margin: 0;
+  color: var(--deep);
+  font-size: 1.05rem;
+}
+.nobet-date{
+  font-size: .82rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+.nobet-status{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px;
+  background: var(--bg-soft);
+  border-radius: var(--radius);
+  border: 1px dashed rgba(5,150,105,0.30);
+  margin-bottom: 20px;
+}
+.nobet-pulse{
+  position: relative;
+  width: 70px; height: 70px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--primary);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  box-shadow: 0 0 0 0 rgba(5,150,105,0.6);
+  animation: pulseRing 2s infinite;
+}
+.nobet-pulse.off{
+  background: var(--accent);
+  box-shadow: 0 0 0 0 rgba(234,88,12,0.6);
+  animation: pulseRing 2s infinite;
+}
+@keyframes pulseRing{
+  0%{ box-shadow: 0 0 0 0 rgba(5,150,105,0.55); }
+  70%{ box-shadow: 0 0 0 22px rgba(5,150,105,0); }
+  100%{ box-shadow: 0 0 0 0 rgba(5,150,105,0); }
+}
+.nobet-pulse svg{ width: 30px; height: 30px; }
+.nobet-info h4{
+  margin: 0 0 4px 0;
+  font-size: 1.05rem;
+  color: var(--deep);
+}
+.nobet-info p{ margin: 0; color: var(--muted); font-size: .9rem; }
+.nobet-meta{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.nobet-meta div{
+  background: var(--bg-mint);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.nobet-meta small{
+  display: block;
+  font-size: .72rem;
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.nobet-meta strong{
+  display: block;
+  color: var(--deep);
+  font-size: .95rem;
+  margin-top: 2px;
+}
+.nobet-card .btn{ width: 100%; }
+
+/* ===================== HIZMETLER ===================== */
+.services{
+  background: var(--bg);
+}
+.services-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+.svc-card{
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px 26px;
+  transition: all .35s ease;
+  position: relative;
+  overflow: hidden;
+}
+.svc-card::before{
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .45s ease;
+}
+.svc-card:hover{
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(5,150,105,0.30);
+}
+.svc-card:hover::before{ transform: scaleX(1); }
+.svc-icon{
+  width: 64px; height: 64px;
+  border-radius: 16px;
+  background: var(--bg-soft);
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+  color: var(--primary);
+  transition: all .35s ease;
+}
+.svc-icon svg{ width: 32px; height: 32px; }
+.svc-card:hover .svc-icon{
+  background: var(--primary);
+  color: #fff;
+  transform: rotate(-6deg) scale(1.05);
+}
+.svc-card h3{ margin-bottom: 10px; }
+.svc-card p{ color: var(--muted); font-size: .95rem; margin: 0; }
+.svc-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 18px;
+  font-weight: 700;
+  font-size: .9rem;
+  color: var(--primary);
+  transition: gap .25s ease;
+}
+.svc-link:hover{ gap: 12px; color: var(--deep); }
+
+/* ===================== URUN KATEGORILERI ===================== */
+.categories{
+  background: var(--bg-soft);
+  position: relative;
+}
+.categories::before{
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: #fff;
+  z-index: 0;
+}
+.cat-grid{
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+.cat-card{
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 30px 20px 26px;
+  text-align: center;
+  border: 1px solid rgba(5,150,105,0.10);
+  transition: all .35s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.cat-card:hover{
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+  border-color: var(--primary);
+}
+.cat-emoji{
+  width: 72px; height: 72px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--bg-soft);
+  display: grid;
+  place-items: center;
+  color: var(--primary);
+  transition: all .35s ease;
+}
+.cat-emoji svg{ width: 36px; height: 36px; }
+.cat-card:hover .cat-emoji{
+  background: var(--primary);
+  color: #fff;
+  transform: scale(1.08);
+}
+.cat-card h4{ margin: 0 0 6px 0; color: var(--deep); }
+.cat-card small{ color: var(--muted); font-size: .82rem; font-weight: 600; }
+.cat-card::after{
+  content: "";
+  position: absolute;
+  left: 50%; bottom: 0;
+  width: 0; height: 3px;
+  background: var(--accent);
+  transition: all .35s ease;
+  transform: translateX(-50%);
+}
+.cat-card:hover::after{ width: 60%; }
+
+/* ===================== EKIP ===================== */
+.team-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.team-card{
+  background: #fff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--line);
+  transition: all .4s ease;
+}
+.team-card:hover{
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+.team-photo{
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+  background: var(--bg-soft);
+}
+.team-photo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s ease;
+}
+.team-card:hover .team-photo img{ transform: scale(1.06); }
+.team-photo::after{
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 50%;
+  background: linear-gradient(0deg, rgba(6,78,59,0.55), transparent);
+}
+.team-body{
+  padding: 26px;
+  text-align: center;
+}
+.team-body h3{
+  margin: 0 0 4px 0;
+  color: var(--deep);
+  font-size: 1.2rem;
+}
+.team-role{
+  display: inline-block;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: .85rem;
+  margin-bottom: 14px;
+  letter-spacing: .04em;
+}
+.team-bio{
+  color: var(--muted);
+  font-size: .9rem;
+  margin: 0 0 16px 0;
+}
+.team-socials{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.team-socials a{
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--bg-soft);
+  display: grid;
+  place-items: center;
+  color: var(--primary);
+  transition: all .3s ease;
+}
+.team-socials a:hover{
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.team-socials svg{ width: 16px; height: 16px; }
+
+/* ===================== BLOG ===================== */
+.blog{
+  background: var(--bg-soft);
+}
+.blog-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.blog-card{
+  background: #fff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  transition: all .4s ease;
+  display: flex;
+  flex-direction: column;
+}
+.blog-card:hover{
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(5,150,105,0.30);
+}
+.blog-photo{
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+.blog-photo img{
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .6s ease;
+}
+.blog-card:hover .blog-photo img{ transform: scale(1.08); }
+.blog-tag{
+  position: absolute;
+  top: 16px; left: 16px;
+  background: rgba(255,255,255,0.95);
+  color: var(--deep);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  z-index: 2;
+}
+.blog-body{
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.blog-meta{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: .82rem;
+  color: var(--muted);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.blog-meta span{ display: inline-flex; align-items: center; gap: 5px; }
+.blog-body h3{
+  margin: 0 0 10px 0;
+  color: var(--deep);
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+.blog-body p{
+  color: var(--ink-soft);
+  font-size: .92rem;
+  flex: 1;
+  margin: 0 0 18px 0;
+}
+.blog-read{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: .9rem;
+  color: var(--primary);
+  align-self: flex-start;
+}
+.blog-read:hover{ color: var(--deep); gap: 12px; }
+.blog-read svg{ width: 14px; height: 14px; transition: transform .25s ease; }
+.blog-read:hover svg{ transform: translateX(4px); }
+
+/* ===================== NOBETCI LISTESI ===================== */
+.nobet-table-wrap{
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.nobet-table{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .95rem;
+}
+.nobet-table thead{
+  background: linear-gradient(135deg, var(--deep) 0%, var(--primary) 100%);
+  color: #fff;
+}
+.nobet-table th{
+  text-align: left;
+  padding: 18px 20px;
+  font-weight: 700;
+  font-size: .85rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.nobet-table td{
+  padding: 18px 20px;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  vertical-align: middle;
+}
+.nobet-table tbody tr{
+  transition: background .25s ease;
+}
+.nobet-table tbody tr:hover{
+  background: var(--bg-soft);
+}
+.nobet-table tbody tr.today{
+  background: linear-gradient(90deg, rgba(5,150,105,0.10), transparent);
+  border-left: 4px solid var(--primary);
+}
+.badge{
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+}
+.badge-on{ background: var(--bg-soft); color: var(--primary); }
+.badge-off{ background: var(--accent-soft); color: var(--accent); }
+.badge-today{ background: var(--accent); color: #fff; }
+.district{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: .88rem;
+}
+.district svg{ width: 14px; height: 14px; color: var(--primary); }
+.tel-link{
+  color: var(--deep);
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+}
+.tel-link:hover{ color: var(--primary); }
+
+.nobet-info-bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 22px;
+  background: var(--bg-soft);
+  border-top: 1px solid var(--line);
+  font-size: .88rem;
+  color: var(--ink-soft);
+}
+.nobet-info-bar .live{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+  font-weight: 700;
+}
+.nobet-info-bar .live .dot{
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 0 rgba(5,150,105,0.6);
+  animation: pulse 1.8s infinite;
+}
+
+/* ===================== HAKKIMIZDA ===================== */
+.about-grid{
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.about-img{
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  box-shadow: var(--shadow-lg);
+}
+.about-img img{
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.about-img::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(6,78,59,0.4));
+  z-index: 1;
+}
+.about-floating{
+  position: absolute;
+  z-index: 2;
+  bottom: 24px; left: 24px;
+  background: #fff;
+  padding: 18px 22px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 80%;
+}
+.about-floating .ic{
+  width: 50px; height: 50px;
+  border-radius: 12px;
+  background: var(--bg-soft);
+  display: grid;
+  place-items: center;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+.about-floating .ic svg{ width: 24px; height: 24px; }
+.about-floating strong{ display: block; color: var(--deep); font-size: 1.05rem; }
+.about-floating span{ color: var(--muted); font-size: .85rem; }
+.about-content .section-eyebrow{ margin-bottom: 14px; }
+.about-content h2{ margin-bottom: 18px; }
+.about-list{
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 28px;
+  display: grid;
+  gap: 14px;
+}
+.about-list li{
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  color: var(--ink-soft);
+}
+.about-list .check{
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--bg-soft);
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.about-list .check svg{ width: 14px; height: 14px; }
+.about-list strong{ color: var(--deep); display: block; margin-bottom: 2px; }
+.about-list span{ color: var(--muted); font-size: .92rem; }
+
+/* ===================== ILETISIM ===================== */
+.contact{
+  background: var(--bg-soft);
+}
+.contact-grid{
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 36px;
+  align-items: stretch;
+}
+.map-card{
+  position: relative;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  min-height: 540px;
+  display: flex;
+  flex-direction: column;
+}
+.map-svg{
+  flex: 1;
+  background:
+    linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  position: relative;
+  overflow: hidden;
+}
+.map-svg::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(5,150,105,0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(5,150,105,0.10) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+.map-pin{
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -100%);
+  z-index: 2;
+}
+.map-pin .pin{
+  width: 60px; height: 60px;
+  border-radius: 50% 50% 50% 0;
+  background: var(--accent);
+  transform: rotate(-45deg);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 18px rgba(234,88,12,0.4);
+  position: relative;
+}
+.map-pin .pin svg{
+  width: 28px; height: 28px;
+  color: #fff;
+  transform: rotate(45deg);
+}
+.map-pin::after{
+  content: "";
+  position: absolute;
+  bottom: -16px; left: 50%;
+  transform: translateX(-50%);
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: rgba(234,88,12,0.25);
+  animation: pinShadow 1.8s infinite;
+}
+@keyframes pinShadow{
+  0%{ transform: translateX(-50%) scale(1); opacity: .6; }
+  100%{ transform: translateX(-50%) scale(2.2); opacity: 0; }
+}
+.map-info{
+  padding: 26px;
+  background: #fff;
+  border-top: 1px solid var(--line);
+}
+.map-info h3{
+  margin: 0 0 16px 0;
+  color: var(--deep);
+}
+.info-row{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: var(--ink-soft);
+  font-size: .94rem;
+}
+.info-row .ic{
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background: var(--bg-soft);
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.info-row .ic svg{ width: 16px; height: 16px; }
+.info-row strong{ color: var(--deep); display: block; font-size: .92rem; }
+.info-row span{ color: var(--muted); font-size: .85rem; }
+
+/* Form */
+.form-card{
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+}
+.form-card h3{
+  margin: 0 0 6px 0;
+  color: var(--deep);
+}
+.form-card > p{
+  color: var(--muted);
+  margin-bottom: 24px;
+  font-size: .94rem;
+}
+.form-row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.field{
+  margin-bottom: 16px;
+  position: relative;
+}
+.field label{
+  display: block;
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--deep);
+  margin-bottom: 6px;
+}
+.field input,
+.field textarea,
+.field select{
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-family: 'Nunito', sans-serif;
+  font-size: .95rem;
+  color: var(--ink);
+  background: #fff;
+  transition: all .25s ease;
+}
+.field textarea{ resize: vertical; min-height: 130px; }
+.field input:focus,
+.field textarea:focus,
+.field select:focus{
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(5,150,105,0.12);
+}
+.field input::placeholder,
+.field textarea::placeholder{ color: #94a3b8; }
+.form-card .btn{ width: 100%; }
+.form-success{
+  display: none;
+  margin-top: 16px;
+  padding: 14px 16px;
+  background: var(--bg-soft);
+  border: 1px solid rgba(5,150,105,0.30);
+  color: var(--deep);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: .9rem;
+}
+.form-success.show{ display: block; animation: fadeUp .5s ease; }
+
+/* ===================== CTA STRIP ===================== */
+.cta-strip{
+  background: linear-gradient(135deg, var(--deep) 0%, var(--primary) 100%);
+  color: #fff;
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+.cta-strip::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.10), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08), transparent 40%);
+}
+.cta-inner{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.cta-inner h2{
+  color: #fff;
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  max-width: 720px;
+}
+.cta-inner p{
+  color: rgba(255,255,255,0.85);
+  margin: 8px 0 0 0;
+}
+.cta-actions{ display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ===================== FOOTER ===================== */
+.footer{
+  background: #052e22;
+  color: rgba(255,255,255,0.7);
+  padding: 70px 0 0;
+  position: relative;
+}
+.footer::before{
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+.footer-grid{
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  padding-bottom: 50px;
+}
+.footer h4{
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 18px;
+  letter-spacing: .04em;
+  position: relative;
+  padding-bottom: 10px;
+}
+.footer h4::after{
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 30px; height: 2px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+.footer-brand .brand{ margin-bottom: 16px; color: #fff; }
+.footer-brand .brand small{ color: rgba(255,255,255,0.6); }
+.footer-brand p{
+  color: rgba(255,255,255,0.7);
+  font-size: .92rem;
+  line-height: 1.7;
+}
+.footer ul{
+  list-style: none;
+  padding: 0; margin: 0;
+}
+.footer ul li{ margin-bottom: 10px; }
+.footer ul a{
+  color: rgba(255,255,255,0.7);
+  font-size: .92rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all .25s ease;
+}
+.footer ul a:hover{ color: #fff; padding-left: 4px; }
+.footer ul a::before{
+  content: "›";
+  color: var(--primary);
+  font-weight: 700;
+}
+.footer-contact li{
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: .9rem;
+  color: rgba(255,255,255,0.7);
+}
+.footer-contact li .ic{
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  background: rgba(5,150,105,0.18);
+  color: #34d399;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.footer-contact li .ic svg{ width: 14px; height: 14px; }
+.footer-contact strong{ color: #fff; display: block; }
+.footer-bottom{
+  border-top: 1px solid rgba(255,255,255,0.10);
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: .85rem;
+  color: rgba(255,255,255,0.55);
+}
+.footer-bottom .socials{
+  display: flex;
+  gap: 8px;
+}
+.footer-bottom .socials a{
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  transition: all .3s ease;
+}
+.footer-bottom .socials a:hover{
+  background: var(--primary);
+  transform: translateY(-2px);
+}
+.footer-bottom .socials svg{ width: 14px; height: 14px; }
+
+/* ===================== REVEAL ANIMATION ===================== */
+.reveal{
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+.reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal.delay-1{ transition-delay: .1s; }
+.reveal.delay-2{ transition-delay: .2s; }
+.reveal.delay-3{ transition-delay: .3s; }
+.reveal.delay-4{ transition-delay: .4s; }
+.reveal.delay-5{ transition-delay: .5s; }
+
+@keyframes fadeUp{
+  from{ opacity: 0; transform: translateY(12px); }
+  to  { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 1100px){
+  .footer-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 980px){
+  .hero-inner{ grid-template-columns: 1fr; gap: 40px; }
+  .hero-side{ max-width: 480px; margin: 0 auto; width: 100%; }
+  .services-grid{ grid-template-columns: repeat(2, 1fr); }
+  .cat-grid{ grid-template-columns: repeat(3, 1fr); }
+  .team-grid{ grid-template-columns: 1fr 1fr; gap: 22px; }
+  .team-photo{ height: 280px; }
+  .blog-grid{ grid-template-columns: 1fr 1fr; }
+  .about-grid{ grid-template-columns: 1fr; gap: 40px; }
+  .about-img{ max-width: 480px; margin: 0 auto; }
+  .contact-grid{ grid-template-columns: 1fr; }
+  .nav-toggle{ display: block; }
+  .nav-links{
+    position: fixed;
+    top: 78px; left: 0; right: 0;
+    flex-direction: column;
+    background: #fff;
+    border-top: 1px solid var(--line);
+    padding: 16px 24px 24px;
+    gap: 4px;
+    transform: translateY(-130%);
+    transition: transform .35s ease;
+    box-shadow: var(--shadow);
+  }
+  .nav-links.is-open{ transform: translateY(0); }
+  .nav-links a{ width: 100%; padding: 12px 16px; }
+  .nav-cta{ text-align: center; margin: 8px 0 0 0; }
+  .footer-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px){
+  section{ padding: 70px 0; }
+  .container{ padding: 0 18px; }
+  .nav-inner{ height: 70px; }
+  .hero{ padding: 100px 0 60px; }
+  .hero-stats{ grid-template-columns: 1fr 1fr; gap: 16px; }
+  .hero-stat strong{ font-size: 1.5rem; }
+  .services-grid{ grid-template-columns: 1fr; }
+  .cat-grid{ grid-template-columns: 1fr 1fr; }
+  .team-grid{ grid-template-columns: 1fr; }
+  .blog-grid{ grid-template-columns: 1fr; }
+  .form-row{ grid-template-columns: 1fr; }
+  .form-card{ padding: 24px; }
+  .nobet-table{ font-size: .86rem; }
+  .nobet-table th, .nobet-table td{ padding: 12px 10px; }
+  .nobet-table th:nth-child(2),
+  .nobet-table td:nth-child(2){ display: none; }
+  .cta-inner{ flex-direction: column; align-items: flex-start; }
+  .footer-grid{ grid-template-columns: 1fr; gap: 30px; }
+  .footer-bottom{ justify-content: center; text-align: center; }
+  .nobet-card{ padding: 22px; }
+  .nobet-status{ flex-direction: column; align-items: flex-start; gap: 14px; }
+  .nobet-meta{ grid-template-columns: 1fr; }
+}
+
+/* Erişilebilirlik: Hareket azaltma */
+@media (prefers-reduced-motion: reduce){
+  *,
+  *::before,
+  *::after{
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  .hero-bg{ animation: none; }
+  html{ scroll-behavior: auto; }
+}
 </style>
 </head>
 <body>
-<nav>
-  <div class="logo">Vita<span>Plus</span></div>
-  <div class="nav-links">
-    <a href="#">Ana Sayfa</a><a href="#">Ürünler</a><a href="#">Hizmetler</a><a href="#">Eczacılar</a><a href="#">İletişim</a>
+
+<!-- =====================================================
+     NAVBAR
+     ===================================================== -->
+<nav class="navbar" id="navbar" aria-label="Ana navigasyon">
+  <div class="nav-inner">
+    <a href="#top" class="brand" aria-label="Hayat Eczanesi anasayfa">
+      <span class="brand-mark" aria-hidden="true">H</span>
+      <span class="brand-text">
+        HAYAT ECZANESİ
+        <small>Sağlığınız bizim önceliğimiz</small>
+      </span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hakkimizda">Hakkımızda</a></li>
+      <li><a href="#hizmetler">Hizmetler</a></li>
+      <li><a href="#urunler">Ürünler</a></li>
+      <li><a href="#nobetci">Nöbetçi</a></li>
+      <li><a href="#ekip">Ekip</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#iletisim">İletişim</a></li>
+      <li><a href="tel:+902125551234" class="nav-cta">Hemen Ara</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-  <a href="#" class="btn-green">Online Siparis</a>
 </nav>
 
-<section class="hero">
-  <div>
-    <div class="hero-badge">Sağlığınız Bizim Önceliğimiz</div>
-    <h1>Güvenilir <span>Sağlık</span> ve İlaç Çözümleri</h1>
-    <p>VitaPlus Eczane olarak 20 yıldır sağlığınız için kaliteli hizmet sunuyoruz. Uzman eczacılarımız ve geniş ürün yelpazemizle her zaman yanınızdayız.</p>
-    <a href="#" class="btn-green">Ürünleri İncele</a>
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+<header class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="hero-eyebrow">
+          <span class="dot" aria-hidden="true"></span>
+          7/24 Nöbetçi Eczane — 1998'den beri hizmetinizdeyiz
+        </span>
+        <h1>Sağlığınız <span class="accent">bizim</span> önceliğimiz.</h1>
+        <p class="hero-lead">
+          Reçeteli ilaçtan cilt bakıma, vitaminden bebek ürünlerine kadar her ihtiyacınızda
+          uzman eczacı kadromuz ve geniş ürün yelpazemizle yanınızdayız.
+          Hızlı, güvenilir ve samimi hizmet anlayışıyla Hayat Eczanesi.
+        </p>
+        <div class="hero-actions">
+          <a href="#nobetci" class="btn btn-primary">
+            Nöbet Listesi
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#iletisim" class="btn btn-ghost">
+            Online Danışmanlık
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong>25+</strong>
+            <span>Yıllık Tecrübe</span>
+          </div>
+          <div class="hero-stat">
+            <strong>12.000+</strong>
+            <span>Ürün Çeşidi</span>
+          </div>
+          <div class="hero-stat">
+            <strong>7/24</strong>
+            <span>Nöbet Hizmeti</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-side" aria-label="Nöbet durumu">
+        <div class="nobet-card" id="nobetci">
+          <div class="nobet-head">
+            <h3>Nöbetçi miyiz?</h3>
+            <span class="nobet-date" id="liveDate">—</span>
+          </div>
+          <div class="nobet-status" id="nobetStatus">
+            <div class="nobet-pulse" id="nobetPulse" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div class="nobet-info">
+              <h4 id="nobetStatusTitle">Şu an açığız</h4>
+              <p id="nobetStatusSub">Bugün 08:00 — 23:00 hizmetinizdeyiz</p>
+            </div>
+          </div>
+          <div class="nobet-meta">
+            <div>
+              <small>Mesai</small>
+              <strong>08:00 — 23:00</strong>
+            </div>
+            <div>
+              <small>Nöbet</small>
+              <strong id="nobetMeta">19:00 — 08:00</strong>
+            </div>
+          </div>
+          <a href="tel:+902125551234" class="btn btn-primary">
+            Hemen Ara
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </a>
+        </div>
+      </aside>
+    </div>
   </div>
-  <img src="https://images.unsplash.com/photo-1576602976047-174e57a47881?w=800&q=80" alt="Eczane" class="hero-img">
+</header>
+
+<!-- =====================================================
+     HAKKIMIZDA
+     ===================================================== -->
+<section id="hakkimizda" class="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img reveal">
+        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=900&q=80" alt="Eczane içi raflar" loading="lazy" />
+        <div class="about-floating">
+          <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+          </div>
+          <div>
+            <strong>25+ Yıl Güven</strong>
+            <span>Mahalle eczanesi sıcaklığı</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-content reveal delay-1">
+        <span class="section-eyebrow">Hakkımızda</span>
+        <h2>Mahallenizin güvenilir sağlık durağı</h2>
+        <p>
+          1998 yılından bu yana Bağcılar'da hizmet veren Hayat Eczanesi,
+          sadece bir ilaç satış noktası değil; sağlığınızla ilgili her konuda
+          danışabileceğiniz bir sağlık durağıdır. Kurucumuz Ecz. Mehmet Yılmaz
+          ve uzman ekibimiz, modern eczacılık anlayışı ile geleneksel mahalle
+          eczanesi samimiyetini bir araya getiriyor.
+        </p>
+        <ul class="about-list">
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </span>
+            <div>
+              <strong>Uzman Eczacı Kadrosu</strong>
+              <span>3 uzman eczacı ve 5 sağlık teknikeri ile kesintisiz hizmet</span>
+            </div>
+          </li>
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </span>
+            <div>
+              <strong>Sosyal Güvenlik Kurumu Anlaşması</strong>
+              <span>SGK, özel sigorta ve tüm kurum anlaşmaları geçerlidir</span>
+            </div>
+          </li>
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </span>
+            <div>
+              <strong>Soğuk Zincir &amp; Kalite Güvencesi</strong>
+              <span>İlaçlar GMP standartlarında, sıcaklık kontrollü muhafaza</span>
+            </div>
+          </li>
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </span>
+            <div>
+              <strong>Ücretsiz Evde Sağlık Hizmeti</strong>
+              <span>Yaşlı ve engelli hastalarımıza ücretsiz teslim</span>
+            </div>
+          </li>
+        </ul>
+        <a href="#hizmetler" class="btn btn-outline">Hizmetlerimizi Keşfedin</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<div class="services-strip">
-  <div class="strip-item"><div class="strip-icon">🚚</div><div class="strip-title">Hızlı Teslimat</div><div class="strip-desc">Aynı gün kapınıza</div></div>
-  <div class="strip-item"><div class="strip-icon">💊</div><div class="strip-title">Reçeteli İlaç</div><div class="strip-desc">Güvenli temin</div></div>
-  <div class="strip-item"><div class="strip-icon">👨‍⚕️</div><div class="strip-title">Eczacı Danışma</div><div class="strip-desc">Ücretsiz ilaç danışmanlığı</div></div>
-  <div class="strip-item"><div class="strip-icon">📱</div><div class="strip-title">Online Sipariş</div><div class="strip-desc">7/24 aktif</div></div>
-</div>
-
-<section class="section">
-  <div class="section-tag">Ürünlerimiz</div>
-  <div class="section-title">Öne Çıkan Ürünler</div>
-  <div class="products-grid">
-    <div class="product-card"><img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&q=80" alt="Vitamin" class="product-img"><div class="product-body"><div class="product-cat">Vitamin</div><div class="product-name">VitaC 1000mg (60 tablet)</div><div class="product-price">89 TL</div><button class="add-btn">Sepete Ekle</button></div></div>
-    <div class="product-card"><img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&q=80" alt="Cilt" class="product-img"><div class="product-body"><div class="product-cat">Cilt Bakım</div><div class="product-name">Derma Nemlendirici Krem</div><div class="product-price">145 TL</div><button class="add-btn">Sepete Ekle</button></div></div>
-    <div class="product-card"><img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&q=80" alt="Takviye" class="product-img"><div class="product-body"><div class="product-cat">Takviye</div><div class="product-name">Omega-3 Balık Yağı</div><div class="product-price">120 TL</div><button class="add-btn">Sepete Ekle</button></div></div>
-    <div class="product-card"><img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=400&q=80" alt="Bebek" class="product-img"><div class="product-body"><div class="product-cat">Bebek Bakım</div><div class="product-name">Bebek Pişik Kremi</div><div class="product-price">75 TL</div><button class="add-btn">Sepete Ekle</button></div></div>
+<!-- =====================================================
+     HIZMETLER
+     ===================================================== -->
+<section id="hizmetler" class="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Hizmetlerimiz</span>
+      <h2 class="section-title">Sağlığınız için sunduğumuz hizmetler</h2>
+      <p class="section-sub">
+        Reçeteli ilaç takibinden aşı uygulamalarına, cilt bakım danışmanlığından
+        evde sağlık hizmetine kadar geniş bir yelpazede yanınızdayız.
+      </p>
+    </div>
+    <div class="services-grid">
+      <article class="svc-card reveal">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.5 20.5L3.5 13.5a4.95 4.95 0 0 1 7-7l.5.5.5-.5a4.95 4.95 0 0 1 7 7L11 20.5"/>
+            <path d="M8.5 8.5l7 7"/>
+          </svg>
+        </div>
+        <h3>Reçeteli İlaç</h3>
+        <p>SGK ve özel sigorta anlaşmalı, soğuk zincir takipli reçeteli ilaç temini ve etkileşim kontrolü.</p>
+        <a href="#iletisim" class="svc-link">Detaylı Bilgi →</a>
+      </article>
+      <article class="svc-card reveal delay-1">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v6M12 22v-6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M22 12h-6M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"/>
+          </svg>
+        </div>
+        <h3>Cilt Bakım</h3>
+        <p>Dermokozmetik markalarla cilt tipi analizi, güneş koruma, anti-aging ve akne bakım danışmanlığı.</p>
+        <a href="#iletisim" class="svc-link">Detaylı Bilgi →</a>
+      </article>
+      <article class="svc-card reveal delay-2">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.5 1.5l-1 4 4 1-1 4 4 1-1 4 4 1-2 5H5l-2-5 4-1-1-4 4-1-1-4 4-1z"/>
+          </svg>
+        </div>
+        <h3>Vitamin &amp; Takviye</h3>
+        <p>Yaşa ve ihtiyaca özel multivitamin, mineral, probiyotik ve omega-3 takviyeleri uzman önerisiyle.</p>
+        <a href="#iletisim" class="svc-link">Detaylı Bilgi →</a>
+      </article>
+      <article class="svc-card reveal delay-3">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 12h.01M15 12h.01M9.5 17a3.5 3.5 0 0 0 5 0"/>
+            <path d="M12 2a10 10 0 0 0-7 17l-1 4 4-1a10 10 0 0 0 14-13 10 10 0 0 0-10-7z"/>
+          </svg>
+        </div>
+        <h3>Bebek &amp; Anne</h3>
+        <p>Anne adayından bebeğe özel mama, bez, losyon, emzik ve gebelik takviyelerinde geniş ürün yelpazesi.</p>
+        <a href="#iletisim" class="svc-link">Detaylı Bilgi →</a>
+      </article>
+      <article class="svc-card reveal delay-4">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+        <h3>Evde Sağlık</h3>
+        <p>Yaşlı ve engelli hastalarımıza ücretsiz ilaç teslimatı, tansiyon ve şeker ölçümü evde sağlık hizmeti.</p>
+        <a href="#iletisim" class="svc-link">Detaylı Bilgi →</a>
+      </article>
+      <article class="svc-card reveal delay-5">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+        </div>
+        <h3>Aşı Hizmetleri</h3>
+        <p>Grip, zatürre, hepatit ve seyahat aşıları için danışmanlık ve soğuk zincir takipli uygulama.</p>
+        <a href="#iletisim" class="svc-link">Detaylı Bilgi →</a>
+      </article>
+    </div>
   </div>
 </section>
 
-<section class="about-section">
-  <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800&q=80" alt="Eczacı" class="about-img">
-  <div>
-    <div class="section-tag">Hakkımızda</div>
-    <div class="section-title">Neden VitaPlus?</div>
-    <p style="color:var(--muted);line-height:1.8;">20 yıldır mahalle eczanesi sıcaklığında hizmet veriyoruz. Uzman eczacı kadromuz, geniş ilaç stoğumuz ve online sipariş sistemimizle her an yanınızdayız.</p>
-    <ul class="feature-list">
-      <li>Lisanslı ve deneyimli eczacılar</li>
-      <li>20.000+ ürün çeşidi</li>
-      <li>Aynı gün teslimat</li>
-      <li>Reçeteli ilaç danışmanlığı</li>
-      <li>Ücretsiz ilaç ölçüm hizmetleri</li>
-    </ul>
-    <a href="#" class="btn-green" style="margin-top:2rem;display:inline-block;">Bize Ulaşın</a>
+<!-- =====================================================
+     URUN KATEGORILERI
+     ===================================================== -->
+<section id="urunler" class="categories">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Ürün Kategorileri</span>
+      <h2 class="section-title">İhtiyacınıza uygun kategoriyi keşfedin</h2>
+      <p class="section-sub">
+        12.000'den fazla ürün çeşidiyle Türkiye'nin önde gelen eczanelerinden biriyiz.
+        Aşağıdan ilgilendiğiniz kategoriyi seçebilirsiniz.
+      </p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card reveal">
+        <div class="cat-emoji" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.5 1.5l-1 4 4 1-1 4 4 1-1 4 4 1-2 5H5l-2-5 4-1-1-4 4-1-1-4 4-1z"/>
+          </svg>
+        </div>
+        <h4>Vitamin &amp; Mineral</h4>
+        <small>1.240 ürün</small>
+      </div>
+      <div class="cat-card reveal delay-1">
+        <div class="cat-emoji" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="5"/>
+            <path d="M3 21v-2a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v2"/>
+          </svg>
+        </div>
+        <h4>Bebek &amp; Çocuk</h4>
+        <small>860 ürün</small>
+      </div>
+      <div class="cat-card reveal delay-2">
+        <div class="cat-emoji" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v6M12 22v-6M2 12h6M22 12h-6"/>
+            <circle cx="12" cy="12" r="4"/>
+          </svg>
+        </div>
+        <h4>Cilt Bakım</h4>
+        <small>2.100 ürün</small>
+      </div>
+      <div class="cat-card reveal delay-3">
+        <div class="cat-emoji" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+        </div>
+        <h4>Ağrı Kesici</h4>
+        <small>320 ürün</small>
+      </div>
+      <div class="cat-card reveal delay-4">
+        <div class="cat-emoji" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 12h.01M15 12h.01M9.5 17a3.5 3.5 0 0 0 5 0"/>
+            <path d="M12 2a10 10 0 0 0-7 17l-1 4 4-1a10 10 0 0 0 14-13 10 10 0 0 0-10-7z"/>
+          </svg>
+        </div>
+        <h4>Soğuk Algınlığı</h4>
+        <small>540 ürün</small>
+      </div>
+      <div class="cat-card reveal delay-5">
+        <div class="cat-emoji" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12h20M12 2v20"/>
+            <circle cx="12" cy="12" r="9"/>
+          </svg>
+        </div>
+        <h4>Sindirim</h4>
+        <small>410 ürün</small>
+      </div>
+      <div class="cat-card reveal">
+        <div class="cat-emoji" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <h4>Göz Sağlığı</h4>
+        <small>220 ürün</small>
+      </div>
+      <div class="cat-card reveal delay-1">
+        <div class="cat-emoji" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <path d="M3 9h18M9 3v18"/>
+          </svg>
+        </div>
+        <h4>Diğer</h4>
+        <small>6.300+ ürün</small>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="hours">
-  <h2>Çalışma Saatlerimiz</h2>
-  <div class="hours-grid">
-    <div class="hour-item"><div class="hour-day">Pazartesi — Cuma</div><div class="hour-time">08:00 — 22:00</div></div>
-    <div class="hour-item"><div class="hour-day">Cumartesi</div><div class="hour-time">09:00 — 21:00</div></div>
-    <div class="hour-item"><div class="hour-day">Pazar</div><div class="hour-time">10:00 — 20:00</div></div>
+<!-- =====================================================
+     UZMAN EKIP
+     ===================================================== -->
+<section id="ekip" class="team">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Uzman Ekip</span>
+      <h2 class="section-title">Alanında uzman eczacılarımız</h2>
+      <p class="section-sub">
+        Sürekli eğitimlerle güncellenen bilgi birikimleri ve samimi yaklaşımlarıyla
+        sizlere en doğru sağlık danışmanlığını sunuyoruz.
+      </p>
+    </div>
+    <div class="team-grid">
+      <article class="team-card reveal">
+        <div class="team-photo">
+          <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&q=80" alt="Ecz. Mehmet Yılmaz" loading="lazy" />
+        </div>
+        <div class="team-body">
+          <h3>Ecz. Mehmet Yılmaz</h3>
+          <span class="team-role">Kurucu Eczacı</span>
+          <p class="team-bio">İstanbul Üniversitesi Eczacılık Fakültesi mezunu. 27 yıllık mesleki deneyim, klinik eczacılık ve fitoterapi uzmanı.</p>
+          <div class="team-socials">
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8 17v-7H5v7h3zM6.5 8.25A1.75 1.75 0 1 0 6.5 4.7a1.75 1.75 0 0 0 0 3.55zM18 17v-3.8c0-2.06-1.1-3.02-2.56-3.02-1.18 0-1.7.65-2 1.1V10h-3v7h3v-3.9c0-.25.02-.5.09-.67.2-.5.66-1.02 1.43-1.02 1.01 0 1.42.77 1.42 1.9V17h3z"/></svg>
+            </a>
+            <a href="#" aria-label="E-posta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="team-card reveal delay-1">
+        <div class="team-photo">
+          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=80" alt="Ecz. Ayşe Demir" loading="lazy" />
+        </div>
+        <div class="team-body">
+          <h3>Ecz. Ayşe Demir</h3>
+          <span class="team-role">Klinik Eczacı</span>
+          <p class="team-bio">Hacettepe Üniversitesi mezunu, 12 yıllık deneyim. Dermokozmetik ve kronik hastalık yönetimi uzmanı.</p>
+          <div class="team-socials">
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8 17v-7H5v7h3zM6.5 8.25A1.75 1.75 0 1 0 6.5 4.7a1.75 1.75 0 0 0 0 3.55zM18 17v-3.8c0-2.06-1.1-3.02-2.56-3.02-1.18 0-1.7.65-2 1.1V10h-3v7h3v-3.9c0-.25.02-.5.09-.67.2-.5.66-1.02 1.43-1.02 1.01 0 1.42.77 1.42 1.9V17h3z"/></svg>
+            </a>
+            <a href="#" aria-label="E-posta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="team-card reveal delay-2">
+        <div class="team-photo">
+          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80" alt="Ecz. Canan Kaya" loading="lazy" />
+        </div>
+        <div class="team-body">
+          <h3>Ecz. Canan Kaya</h3>
+          <span class="team-role">Beslenme Uzmanı</span>
+          <p class="team-bio">Marmara Üniversitesi Eczacılık mezunu, fitoterapi ve nutrasötik danışmanlık sertifikalı. 8 yıllık tecrübe.</p>
+          <div class="team-socials">
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8 17v-7H5v7h3zM6.5 8.25A1.75 1.75 0 1 0 6.5 4.7a1.75 1.75 0 0 0 0 3.55zM18 17v-3.8c0-2.06-1.1-3.02-2.56-3.02-1.18 0-1.7.65-2 1.1V10h-3v7h3v-3.9c0-.25.02-.5.09-.67.2-.5.66-1.02 1.43-1.02 1.01 0 1.42.77 1.42 1.9V17h3z"/></svg>
+            </a>
+            <a href="#" aria-label="E-posta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
-<footer>
-  <div class="footer-logo">VitaPlus</div>
-  <p>Sağlığınız için güvenilir adres.</p>
-  <p style="margin-top:0.8rem;">info@vitapluseczane.com.tr | +90 212 555 0400</p>
-  <p style="margin-top:1rem;font-size:0.8rem;">© 2025 VitaPlus Eczane. Tüm hakları saklıdır.</p>
+<!-- =====================================================
+     BLOG / SAGLIK
+     ===================================================== -->
+<section id="blog" class="blog">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Sağlık Blogu</span>
+      <h2 class="section-title">Uzmanından sağlık ipuçları</h2>
+      <p class="section-sub">
+        Eczacılarımız tarafından hazırlanan güncel sağlık yazılarıyla bilinçli
+        bir yaşam sürmenize yardımcı oluyoruz.
+      </p>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-card reveal">
+        <div class="blog-photo">
+          <span class="blog-tag">Bağışıklık</span>
+          <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&q=80" alt="C vitamini" loading="lazy" />
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span>12 Kasım 2025</span>
+            <span>5 dk okuma</span>
+          </div>
+          <h3>Kış Aylarında Bağışıklığınızı Güçlendirmenin 10 Yolu</h3>
+          <p>Soğuk havalarda hastalıklara yakalanma riski artarken, doğru beslenme ve takviyelerle bağışıklık sisteminizi nasıl destekleyeceğinizi öğrenin.</p>
+          <a href="#" class="blog-read">
+            Devamını Oku
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+      <article class="blog-card reveal delay-1">
+        <div class="blog-photo">
+          <span class="blog-tag">Cilt Bakım</span>
+          <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80" alt="Cilt bakım ürünleri" loading="lazy" />
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span>3 Kasım 2025</span>
+            <span>4 dk okuma</span>
+          </div>
+          <h3>Cilt Tipinize Göre Doğru Nemlendirici Nasıl Seçilir?</h3>
+          <p>Kuru, yağlı, karma veya hassas cilt... Her cilt tipi farklı bir nemlendiriciye ihtiyaç duyar. Uzman önerilerimizle doğru ürünü bulun.</p>
+          <a href="#" class="blog-read">
+            Devamını Oku
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+      <article class="blog-card reveal delay-2">
+        <div class="blog-photo">
+          <span class="blog-tag">Çocuk Sağlığı</span>
+          <img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=600&q=80" alt="Bebek bakım" loading="lazy" />
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span>28 Ekim 2025</span>
+            <span>6 dk okuma</span>
+          </div>
+          <h3>Bebeklerde Aşı Takvimi: Ebeveynler İçin Kapsamlı Rehber</h3>
+          <p>0-24 ay arası bebekler için zorunlu ve önerilen aşıların takvimi, yan etkileri ve dikkat edilmesi gerekenler hakkında bilmeniz gereken her şey.</p>
+          <a href="#" class="blog-read">
+            Devamını Oku
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     NOBETCI LISTESI
+     ===================================================== -->
+<section id="nobetci-listesi" class="nobetci-table">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Nöbetçi Eczaneler</span>
+      <h2 class="section-title">Bu haftaki nöbetçi eczaneler</h2>
+      <p class="section-sub">
+        Bağcılar bölgesinde bu hafta nöbetçi olan eczanelerin güncel listesi.
+        Acil durumlarda size en yakın nöbetçi eczaneye ulaşabilirsiniz.
+      </p>
+    </div>
+    <div class="nobet-table-wrap reveal">
+      <table class="nobet-table" aria-label="Bu haftaki nöbetçi eczaneler listesi">
+        <thead>
+          <tr>
+            <th scope="col">Tarih</th>
+            <th scope="col">Gün</th>
+            <th scope="col">Eczane Adı</th>
+            <th scope="col">Adres</th>
+            <th scope="col">Telefon</th>
+            <th scope="col">Durum</th>
+          </tr>
+        </thead>
+        <tbody id="nobetTbody">
+          <tr>
+            <td>04.06.2026</td>
+            <td>Perşembe</td>
+            <td><strong>Hayat Eczanesi</strong><br><span class="district">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Bağcılar Merkez</span>
+            </td>
+            <td>Çınar Cd. No:24 Bağcılar</td>
+            <td><a href="tel:+902125551234" class="tel-link">0212 555 12 34</a></td>
+            <td><span class="badge badge-on">Nöbetçi</span></td>
+          </tr>
+          <tr>
+            <td>05.06.2026</td>
+            <td>Cuma</td>
+            <td><strong>Şifa Eczanesi</strong><br><span class="district">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Bağcılar / Kirazlı</span>
+            </td>
+            <td>Kirazlı Cd. No:18 Bağcılar</td>
+            <td><a href="tel:+902125551235" class="tel-link">0212 555 12 35</a></td>
+            <td><span class="badge badge-on">Nöbetçi</span></td>
+          </tr>
+          <tr>
+            <td>06.06.2026</td>
+            <td>Cumartesi</td>
+            <td><strong>Yıldız Eczanesi</strong><br><span class="district">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Bağcılar / Yavuz Selim</span>
+            </td>
+            <td>Yavuz Selim Mh. No:7 Bağcılar</td>
+            <td><a href="tel:+902125551236" class="tel-link">0212 555 12 36</a></td>
+            <td><span class="badge badge-on">Nöbetçi</span></td>
+          </tr>
+          <tr>
+            <td>07.06.2026</td>
+            <td>Pazar</td>
+            <td><strong>Demet Eczanesi</strong><br><span class="district">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Bağcılar / Demetevler</span>
+            </td>
+            <td>Demetevler 1. Cd. No:42</td>
+            <td><a href="tel:+902125551237" class="tel-link">0212 555 12 37</a></td>
+            <td><span class="badge badge-on">Nöbetçi</span></td>
+          </tr>
+          <tr>
+            <td>08.06.2026</td>
+            <td>Pazartesi</td>
+            <td><strong>Sağlık Eczanesi</strong><br><span class="district">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Bağcılar / Göztepe</span>
+            </td>
+            <td>Göztepe Mh. No:15 Bağcılar</td>
+            <td><a href="tel:+902125551238" class="tel-link">0212 555 12 38</a></td>
+            <td><span class="badge badge-on">Nöbetçi</span></td>
+          </tr>
+          <tr>
+            <td>09.06.2026</td>
+            <td>Salı</td>
+            <td><strong>Merve Eczanesi</strong><br><span class="district">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Bağcılar / Hürriyet</span>
+            </td>
+            <td>Hürriyet Mh. No:9 Bağcılar</td>
+            <td><a href="tel:+902125551239" class="tel-link">0212 555 12 39</a></td>
+            <td><span class="badge badge-on">Nöbetçi</span></td>
+          </tr>
+          <tr>
+            <td>10.06.2026</td>
+            <td>Çarşamba</td>
+            <td><strong>Hayat Eczanesi</strong><br><span class="district">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Bağcılar Merkez</span>
+            </td>
+            <td>Çınar Cd. No:24 Bağcılar</td>
+            <td><a href="tel:+902125551234" class="tel-link">0212 555 12 34</a></td>
+            <td><span class="badge badge-on">Nöbetçi</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="nobet-info-bar">
+        <span><span class="live"><span class="dot" aria-hidden="true"></span>Canlı Veri</span> &nbsp;·&nbsp; Son güncelleme: <strong id="lastUpdate">bugün 08:00</strong></span>
+        <span>Acil durumlarda <a href="tel:112" class="tel-link">112</a>'yi arayınız</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     ILETISIM
+     ===================================================== -->
+<section id="iletisim" class="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">İletişim</span>
+      <h2 class="section-title">Bize ulaşın, yanınızdayız</h2>
+      <p class="section-sub">
+        Sağlık danışmanlığı, reçete yenileme, ürün sorgulama ve evde sağlık
+        hizmeti için bize ulaşabilirsiniz. Mesai dışında nöbet telefonumuz hizmettedir.
+      </p>
+    </div>
+    <div class="contact-grid">
+      <!-- Harita placeholder -->
+      <div class="map-card reveal">
+        <div class="map-svg" aria-label="Eczane konumu harita">
+          <div class="map-pin" aria-hidden="true">
+            <div class="pin">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+              </svg>
+            </div>
+          </div>
+          <!-- Yollar -->
+          <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 400 500" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 120 Q100 130 200 110 T400 140" stroke="#059669" stroke-width="3" fill="none" opacity="0.35" />
+            <path d="M0 320 Q120 340 220 310 T400 330" stroke="#059669" stroke-width="3" fill="none" opacity="0.35" />
+            <path d="M120 0 Q140 200 130 400 T160 500" stroke="#064e3b" stroke-width="3" fill="none" opacity="0.25" />
+            <path d="M280 0 Q300 200 290 400 T310 500" stroke="#064e3b" stroke-width="3" fill="none" opacity="0.25" />
+          </svg>
+        </div>
+        <div class="map-info">
+          <h3>Hayat Eczanesi</h3>
+          <div class="info-row">
+            <span class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            <div>
+              <strong>Adres</strong>
+              <span>Çınar Cd. No:24, 34200 Bağcılar / İstanbul</span>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </span>
+            <div>
+              <strong>Telefon</strong>
+              <span>0212 555 12 34 — Nöbet: 0532 555 12 34</span>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </span>
+            <div>
+              <strong>Çalışma Saatleri</strong>
+              <span>Pzt - Cmt: 08:00 — 23:00 &nbsp;|&nbsp; Pzr: 09:00 — 22:00</span>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </span>
+            <div>
+              <strong>E-posta</strong>
+              <span>info@hayatezc.com.tr</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <form class="form-card reveal delay-1" id="contactForm" novalidate>
+        <h3>Bize mesaj gönderin</h3>
+        <p>Formu doldurun, en kısa sürede uzman eczacılarımız dönüş yapsın.</p>
+        <div class="form-row">
+          <div class="field">
+            <label for="fName">Adınız Soyadınız</label>
+            <input type="text" id="fName" name="name" placeholder="Örn. Ahmet Yılmaz" required />
+          </div>
+          <div class="field">
+            <label for="fPhone">Telefon</label>
+            <input type="tel" id="fPhone" name="phone" placeholder="0532 555 12 34" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="fEmail">E-posta</label>
+          <input type="email" id="fEmail" name="email" placeholder="ornek@eposta.com" required />
+        </div>
+        <div class="field">
+          <label for="fTopic">Konu</label>
+          <select id="fTopic" name="topic" required>
+            <option value="">Lütfen seçiniz</option>
+            <option>Reçete Danışmanlığı</option>
+            <option>Ürün Bilgisi</option>
+            <option>Evde Sağlık Hizmeti</option>
+            <option>Aşı Randevu</option>
+            <option>Şikayet &amp; Öneri</option>
+            <option>Diğer</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fMsg">Mesajınız</label>
+          <textarea id="fMsg" name="message" placeholder="Mesajınızı buraya yazabilirsiniz..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Mesajı Gönder
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+        <div class="form-success" id="formSuccess">
+          Mesajınız başarıyla iletildi. En kısa sürede sizinle iletişime geçeceğiz.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     CTA STRIP
+     ===================================================== -->
+<section class="cta-strip">
+  <div class="container cta-inner">
+    <div>
+      <h2>7/24 yanınızdayız — Acil durumda bizi arayın</h2>
+      <p>Nöbet saatlerinde de hizmetinizdeyiz. Acil ilaç ihtiyaçlarınız için nöbet telefonumuzu kullanabilirsiniz.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="tel:+905325551234" class="btn btn-accent">
+        Nöbet Hattı: 0532 555 12 34
+      </a>
+      <a href="#nobetci-listesi" class="btn btn-ghost">Nöbet Listesi</a>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="brand">
+          <span class="brand-mark" aria-hidden="true">H</span>
+          <span class="brand-text">
+            HAYAT ECZANESİ
+            <small>Sağlığınız bizim önceliğimiz</small>
+          </span>
+        </a>
+        <p>
+          1998'den bu yana Bağcılar'da hizmet veren, modern eczacılık anlayışını
+          mahalle sıcaklığıyla buluşturan, SGK anlaşmalı güvenilir sağlık durağınız.
+        </p>
+      </div>
+      <div>
+        <h4>Hızlı Erişim</h4>
+        <ul>
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+          <li><a href="#hizmetler">Hizmetlerimiz</a></li>
+          <li><a href="#urunler">Ürünler</a></li>
+          <li><a href="#ekip">Uzman Ekip</a></li>
+          <li><a href="#blog">Sağlık Blogu</a></li>
+          <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hizmetler</h4>
+        <ul>
+          <li><a href="#hizmetler">Reçeteli İlaç</a></li>
+          <li><a href="#hizmetler">Cilt Bakım</a></li>
+          <li><a href="#hizmetler">Vitamin &amp; Takviye</a></li>
+          <li><a href="#hizmetler">Bebek &amp; Anne</a></li>
+          <li><a href="#hizmetler">Evde Sağlık</a></li>
+          <li><a href="#hizmetler">Aşı Hizmetleri</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>İletişim</h4>
+        <ul class="footer-contact">
+          <li>
+            <span class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            <div><strong>Adres</strong>Çınar Cd. No:24 Bağcılar / İstanbul</div>
+          </li>
+          <li>
+            <span class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </span>
+            <div><strong>Telefon</strong>0212 555 12 34</div>
+          </li>
+          <li>
+            <span class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </span>
+            <div><strong>Çalışma</strong>08:00 — 23:00</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> Hayat Eczanesi. Tüm hakları saklıdır. <span style="opacity:.6">|</span> Ecz. Mehmet Yılmaz</span>
+      <div class="socials">
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84 0 0 0 .497-3.753c0-.249 1.51-2.772 1.818-4.013z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.464 3.488"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
 </footer>
 
 <script>
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}});});
-// Animate strip icons on scroll
-window.addEventListener('scroll',()=>{
-  document.querySelectorAll('.strip-item').forEach((el,i)=>{
-    const rect=el.getBoundingClientRect();
-    if(rect.top<window.innerHeight){el.style.opacity='1';el.style.transform='translateY(0)';}
+(function(){
+  'use strict';
+
+  // ---------- Navbar scroll ----------
+  const navbar = document.getElementById('navbar');
+  const onScroll = () => {
+    if (window.scrollY > 24) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ---------- Mobile nav ----------
+  const toggle = document.getElementById('navToggle');
+  const links  = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('is-open');
+    toggle.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
-});
-</script></body>
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('is-open');
+    toggle.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // ---------- Reveal on scroll ----------
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting){
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => io.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('is-visible'));
+  }
+
+  // ---------- Tarih & nöbet durumu ----------
+  const TR_MONTHS = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+  const TR_DAYS   = ['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'];
+  const dateEl   = document.getElementById('liveDate');
+  const titleEl  = document.getElementById('nobetStatusTitle');
+  const subEl    = document.getElementById('nobetStatusSub');
+  const pulseEl  = document.getElementById('nobetPulse');
+
+  const now = new Date();
+  if (dateEl){
+    dateEl.textContent = TR_DAYS[now.getDay()] + ', ' + now.getDate() + ' ' + TR_MONTHS[now.getMonth()] + ' ' + now.getFullYear();
+  }
+
+  // Nöbet durumu: Pazar 09-22, diğer günler 08-23
+  const hour = now.getHours();
+  const day  = now.getDay(); // 0 Pazar
+  let isOpen = true;
+  if (day === 0){
+    isOpen = hour >= 9 && hour < 22;
+  } else {
+    isOpen = hour >= 8 && hour < 23;
+  }
+  if (!isOpen){
+    titleEl.textContent = 'Şu an kapalıyız';
+    subEl.textContent   = 'Nöbet saatinde açığız. Acil için nöbet hattımız hizmettedir.';
+    pulseEl.classList.add('off');
+  }
+
+  // ---------- Bugünün satırını vurgula ----------
+  const today = now.getDate().toString().padStart(2,'0') + '.' +
+                (now.getMonth()+1).toString().padStart(2,'0') + '.' +
+                now.getFullYear();
+  const tbody = document.getElementById('nobetTbody');
+  if (tbody){
+    tbody.querySelectorAll('tr').forEach(tr => {
+      const dateCell = tr.querySelector('td');
+      if (dateCell && dateCell.textContent.trim() === today){
+        tr.classList.add('today');
+        const badge = tr.querySelector('.badge');
+        if (badge){
+          badge.classList.remove('badge-on');
+          badge.classList.add('badge-today');
+          badge.textContent = 'Bugün';
+        }
+      }
+    });
+  }
+
+  // ---------- Footer yılı ----------
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+
+  // ---------- Form ----------
+  const form = document.getElementById('contactForm');
+  const ok   = document.getElementById('formSuccess');
+  if (form){
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const required = form.querySelectorAll('[required]');
+      let valid = true;
+      required.forEach(f => {
+        if (!f.value.trim()){
+          valid = false;
+          f.style.borderColor = '#ea580c';
+        } else {
+          f.style.borderColor = '';
+        }
+      });
+      if (!valid) return;
+      if (ok) ok.classList.add('show');
+      form.reset();
+      setTimeout(() => ok && ok.classList.remove('show'), 5000);
+    });
+  }
+})();
+</script>
+</body>
 </html>
